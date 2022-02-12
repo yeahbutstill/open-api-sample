@@ -71,4 +71,13 @@ temen-temen wajib sudah memahami basic
 
 [doc5]: doc/Screenshot%20from%202022-02-12%2020-27-59.png "Doc5"
 
-# 
+# info
+* Info merupakan bagian dari informasi metadata tentang API yang kita buat 
+* Kita bisa memasukkan author, lisensi, dan lain-lain
+
+# Info Object
+![alt text][doc6]
+
+[doc6]: doc/Screenshot%20from%202022-02-12%2020-41-43.png "Doc6"
+
+

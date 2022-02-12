@@ -67,9 +67,14 @@ temen-temen wajib sudah memahami basic
 [doc4]: doc/Screenshot%20from%202022-02-12%2020-26-12.png "Doc4"
 
 # Kode : OpenAPI Document
-![alt text][doc5]
-
-[doc5]: doc/Screenshot%20from%202022-02-12%2020-27-59.png "Doc5"
+```json5
+{
+  "openapi": "3.0.3",
+  "info": {},
+  "servers": [],
+  "paths": {}
+}
+```
 
 # info
 * Info merupakan bagian dari informasi metadata tentang API yang kita buat 
@@ -80,4 +85,17 @@ temen-temen wajib sudah memahami basic
 
 [doc6]: doc/Screenshot%20from%202022-02-12%2020-41-43.png "Doc6"
 
+# Contact Object
+![alt text][doc7]
 
+[doc7]: doc/Screenshot%20from%202022-02-12%2020-47-46.png "Doc7"
+
+# License Object
+![alt text][doc8]
+
+[doc8]: doc/Screenshot%20from%202022-02-12%2020-53-39.png "Doc8"
+
+# Kode : Info
+```json5
+
+```

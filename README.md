@@ -1,7 +1,4 @@
-# open-api-sample
-
-
-# Sebelum Belajar
+# Sebelum Belajar OpenApi
 temen-temen wajib sudah memahami basic
 * HTTP
 * RESTful API
@@ -44,7 +41,12 @@ temen-temen wajib sudah memahami basic
 * Kita tidak bisa menggunakan tipe data yang terdapat pada bahasa pemrograman yang digunakan untuk membuat RESTful API, oleh karena itu pada OpenAPI terdapat tipe data general yang bisa digunakan yang dapat dimengerti di semua bahasa pemrograman
 
 # OpenAPI Tipe Data (1)
-![alt text][doc]
+![alt text][doc1]
 
-[doc]: doc/Screenshot%20from%202022-02-12%2020-11-23.png "Doc"
+[doc1]: doc/Screenshot%20from%202022-02-12%2020-11-23.png "Doc1"
+
+# OpenAPI Tipe Data (2)
+![alt text][doc2]
+
+[doc2]: doc/Screenshot%20from%202022-02-12%2020-18-22.png "Doc2"
 

@@ -1,6 +1,20 @@
 {
   "openapi": "3.0.3",
-  "info": {},
+  "info": {
+    "title": "Bill Payment RESTful API",
+    "version": "1",
+    "description": "OpenAPI for Bill Payment RESTful API",
+    "termsOfService": "https://www.yeahbutsill.com/payment",
+    "contact": {
+      "name": "Dani Setiawan",
+      "url": "https://www.yeahbutsill.com",
+      "email": "dani.setiawan@ist.id"
+    },
+    "license": {
+      "name": "APACHE 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    }
+  },
   "servers": [],
   "paths": {}
 }

@@ -50,3 +50,25 @@ temen-temen wajib sudah memahami basic
 
 [doc2]: doc/Screenshot%20from%202022-02-12%2020-18-22.png "Doc2"
 
+# Document
+* OpenAPI sangatlah sederhana, kita hanya perlu membuat satu file berisi semua data OpenAPI nya 
+* OpenAPI memiliki struktur yang sudah ditentukan ketika membuat document nya 
+* Kita bisa menggunakan JSON atau YAML untuk file nya
+* https://spec.openapis.org/oas/v3.0.3#openapi-object 
+
+# OpenAPI Object (1)
+![alt text][doc3]
+
+[doc3]: doc/Screenshot%20from%202022-02-12%2020-23-57.png "Doc3"
+
+# OpenAPI Object (2)
+![alt text][doc4]
+
+[doc4]: doc/Screenshot%20from%202022-02-12%2020-26-12.png "Doc4"
+
+# Kode : OpenAPI Document
+![alt text][doc5]
+
+[doc5]: doc/Screenshot%20from%202022-02-12%2020-27-59.png "Doc5"
+
+# 

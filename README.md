@@ -169,4 +169,42 @@ temen-temen wajib sudah memahami basic
   }
 ```
 
+# Path
+* Path merupakan representasi endpoint API di OpenAPI 
+* Pada Path, kita tidak perlu menuliskan seluruh URL, cukup url di belakang setelah lokasi server
+
+# Path Object
+![alt text][doc11]
+
+[doc11]: doc/Screenshot%20from%202022-02-13%2009-25-56.png "Doc11"
+
+# Path Item Object (1)
+![alt text][doc12]
+
+[doc12]: doc/Screenshot%20from%202022-02-13%2009-28-12.png "Doc12"
+
+# Path Item Object (2)
+![alt text][doc13]
+
+[doc13]: doc/Screenshot%20from%202022-02-13%2009-29-29.png "Doc13"
+
+# Path Operation
+![alt text][doc14]
+
+[doc14]: doc/Screenshot%20from%202022-02-13%2009-31-51.png "Doc14"
+
+# Kode : Path
+```json5
+"paths": {
+    "/payment" : {
+      "get": {},
+      "post":  {}
+    },
+    "/payment/{paymentId}" : {
+      "put": {},
+      "delete": {}
+    }
+  }
+```
+
 # 

@@ -36,5 +36,14 @@
     "description": "Github Yeah But Still",
     "url": "https://github.com/yeahbutstill"
   },
-  "paths": {}
+  "paths": {
+    "/payment" : {
+      "get": {},
+      "post":  {}
+    },
+    "/payment/{paymentId}" : {
+      "put": {},
+      "delete": {}
+    }
+  }
 }

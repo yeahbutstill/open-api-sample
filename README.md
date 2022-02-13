@@ -123,5 +123,31 @@ temen-temen wajib sudah memahami basic
 # Kode : Info
 
 ```json5
-
+"info": {
+"title": "Bill Payment RESTful API",
+"version": "1",
+"description": "OpenAPI for Bill Payment RESTful API",
+"termsOfService": "https://www.yeahbutsill.com/payment",
+"contact": {
+"name": "Dani Setiawan",
+"url": "https://www.yeahbutsill.com",
+"email": "dani.setiawan@ist.id"
+},
+"license": {
+"name": "APACHE 2.0",
+"url": "https://www.apache.org/licenses/LICENSE-2.0"
+}
 ```
+
+# Server
+
+* Saat kita membuat API sudah pasti terdapat server RESTful API yang nanti akan kita buat
+* Kita bisa memberitahu server yang tersedia di OpenAPI
+* Misal, terdapat server development, staging, production dan lain-lain
+
+# Server Object
+
+![alt text][doc9]
+
+[doc9]: doc/Screenshot%20from%202022-02-13%2005-13-34.png "Doc9"
+

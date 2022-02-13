@@ -381,3 +381,27 @@ temen-temen wajib sudah memahami basic
 ```
 
 # Object Schema
+* Sebelumnya kita hanya membuat schema sederhana, seperti schema tipe data boolean atau string 
+* Spesifikasi di JSON Schema juga mendukung pembuatan schema berupa objek, yaitu data yang memiliki attribute lebih dari satu
+
+# Kode : Object Schema
+```json5
+"application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "customer" : {
+                    "type": "string",
+                    "minLength": 1,
+                    "required": true
+                  },
+                  "priority": {
+                    "type": "integer",
+                    "format": "int32",
+                    "required": true,
+                    "default": 1
+                  }
+                }
+              }
+            }
+```

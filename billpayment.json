@@ -37,27 +37,77 @@
     "url": "https://github.com/yeahbutstill"
   },
   "paths": {
-    "/payment" : {
+    "/payment": {
       "get": {
-        "semmary": "Get All Payment",
+        "summary": "Get All Payment",
         "description": "Only will return acative payment, complete payment or delete payment will be remove",
+        "parameters": [
+          {
+            "name": "include_done",
+            "in": "query",
+            "required": false,
+            "description": "Is include done payment",
+            "schema": {
+              "type": "boolean",
+              "nullable": true,
+              "default": false
+            }
+          },
+          {
+            "name": "va_customer",
+            "in": "query",
+            "required": false,
+            "description": "Filter payment by VA customer",
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          }
+        ],
         "responses": {}
       },
-      "post":  {
-        "semmary": "Create new Payment",
+      "post": {
+        "summary": "Create new Payment",
         "description": "Create new active payment",
         "responses": {}
       }
     },
-    "/payment/{paymentId}" : {
+    "/payment/{paymentId}": {
       "put": {
-        "semmary": "Update existing Payment",
+        "summary": "Update existing Payment",
         "description": "Update existing payment in database",
+        "parameters": [
+          {
+            "name": "paymentId",
+            "in": "path",
+            "required": true,
+            "description": "Payment id for updated",
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          }
+        ],
         "responses": {}
       },
       "delete": {
-        "semmary": "Delete existing Payment",
+        "summary": "Delete existing Payment",
         "description": "Delete existing payment in database",
+        "parameters": [
+          {
+            "name": "paymentId",
+            "in": "path",
+            "required": true,
+            "description": "Payment id for deleted",
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          }
+        ],
         "responses": {}
       }
     }

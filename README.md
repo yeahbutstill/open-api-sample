@@ -122,7 +122,7 @@ temen-temen wajib sudah memahami basic
 
 # Kode : Info
 
-```json5
+```json
 "info": {
 "title": "Bill Payment RESTful API",
 "version": "1",
@@ -233,12 +233,12 @@ temen-temen wajib sudah memahami basic
 "paths": {
     "/payment" : {
       "get": {
-        "semmary": "Get All Payment",
+        "summary": "Get All Payment",
         "description": "Only will return acative payment, complete payment or delete payment will be remove",
         "responses": {}
       },
       "post":  {
-        "semmary": "Create new Payment",
+        "summary": "Create new Payment",
         "description": "Create new active payment",
         "responses": {}
       }
@@ -250,4 +250,103 @@ temen-temen wajib sudah memahami basic
   }
 ```
 
-#
+# Parameter
+* Parameter adalah data yang dikirim tidak melalui Request Body 
+* Operation bisa memiliki parameter lebih dari satu 
+* OpenAPI mendukung beberapa jenis parameter, yaitu Query Parameter, Path Variable, Header, dan Cookie 
+* Kita bisa menambahkan parameter pada Operation, sehingga pengguna bisa tahu bahwa ada parameter yang perlu dikirim ketika memanggil Operation tersebut
+
+# Parameter Object (1)
+![alt text][doc18]
+
+[doc18]: doc/Screenshot%20from%202022-02-13%2010-11-59.png "Doc18"
+
+# Parameter Object (2)
+![alt text][doc19]
+
+[doc19]: doc/Screenshot%20from%202022-02-13%2010-14-30.png "Doc19"
+
+# Kode : Parameter (1)
+```json5
+"get": {
+        "summary": "Get All Payment",
+        "description": "Only will return acative payment, complete payment or delete payment will be remove",
+        "parameters": [
+          {
+            "name": "include_done",
+            "in": "query",
+            "required": false,
+            "description": "Is include done payment"
+          },
+          {
+            "name": "va_customer",
+            "in": "query",
+            "required": false,
+            "description": "Filter payment by VA customer"
+          }
+        ],
+        "responses": {}
+      }
+```
+
+# Kode : Parameter (2)
+```json5
+"/payment/{paymentId}" : {
+      "put": {
+        "summary": "Update existing Payment",
+        "description": "Update existing payment in database",
+        "parameters": [
+          {
+            "name": "paymentId",
+            "in": "path",
+            "required": true,
+            "description": "Payment id for updated"
+          }
+        ],
+        "responses": {}
+      },
+      "delete": {
+        "summary": "Delete existing Payment",
+        "description": "Delete existing payment in database",
+        "parameters": [
+          {
+            "name": "paymentId",
+            "in": "path",
+            "required": true,
+            "description": "Payment id for deleted"
+          }
+        ],
+        "responses": {}
+      }
+    }
+```
+
+# Schema
+* Saat kita membuat parameter, kita mungkin ingin memberitahu tentang tipe data untuk parameter tersebut 
+* Parameter memiliki attribute bernama schema, dimana schema sebenarnya sangat kompleks, kita akan bahas secara bertahap 
+* Dimulai dari simple schema, misal tipe data yang sebelumnya sudah kita bahas
+
+# JSON Schema Specification
+* Schema menggunakan JSON Schema untuk mendefinisikan struktur datanya 
+* JSON Schema bisa berisikan tipe sederhana, seperti number, string, boolean dan lain-lain, atau bahkan tipe data kompleks, seperti object dan array (yang akan kita bahas nanti)
+* https://json-schema.org/
+* https://json-schema.org/draft/2020-12/json-schema-core.html 
+
+# Kode: Schema
+![alt text][doc20]
+
+[doc20]: doc/Screenshot%20from%202022-02-13%2010-53-22.png "Doc20"
+
+# JSON Schema Validation
+* Schema mendukung JSON Schema Validation 
+* Hal ini membuat kita bisa memberitahu validasi yang diperlukan ketika pengguna membaca OpenAPI kita 
+* Dengan kita tambahkan Schema Validation, pengguna RESTful API kita bisa tahu validation yang kita buat tanpa harus kita buat dokumentasi secara terpisah
+* https://json-schema.org/draft/2020-12/json-schema-validation.html 
+
+# Kode: Schema Validation
+![alt text][doc21]
+
+[doc21]: doc/Screenshot%20from%202022-02-13%2017-59-34.png "Doc21"
+
+# Request Body
+* 

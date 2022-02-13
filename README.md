@@ -160,3 +160,13 @@ temen-temen wajib sudah memahami basic
 ![alt text][doc10]
 
 [doc10]: doc/Screenshot%20from%202022-02-13%2009-16-34.png "Doc10"
+
+# Kode: External Documentation
+```json5
+"externalDocs": {
+    "description": "Github Yeah But Still",
+    "url": "https://github.com/yeahbutstill"
+  }
+```
+
+# 

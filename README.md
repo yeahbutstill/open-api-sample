@@ -207,4 +207,47 @@ temen-temen wajib sudah memahami basic
   }
 ```
 
-# 
+# Operation
+* Setiap Path yang kita buat di OpenAPI, bisa memiliki lebih dari satu Operation 
+* Hal ini dikarenakan, dalam HTTP, satu URL bisa memiliki beberapa HTTP Method 
+* Misal url untuk mengambil semua data dan membuat data baru, mungkin url nya sama, yang membedakan adalah HTTP Method nya, GET untuk mengambil data, POST untuk membuat data 
+* Inti dari API Documentation adalah dokumentasi operation yang terdapat pada RESTful API yang kita buat
+
+# Operation Object (1)
+![alt text][doc15]
+
+[doc15]: doc/Screenshot%20from%202022-02-13%2009-49-11.png "Doc15"
+
+# Operation Object (2)
+![alt text][doc16]
+
+[doc16]: doc/Screenshot%20from%202022-02-13%2009-50-46.png "Doc16"
+
+# Operation Object (3)
+![alt text][doc17]
+
+[doc17]: doc/Screenshot%20from%202022-02-13%2009-52-51.png "Doc17"
+
+# Kode : Operation
+```json5
+"paths": {
+    "/payment" : {
+      "get": {
+        "semmary": "Get All Payment",
+        "description": "Only will return acative payment, complete payment or delete payment will be remove",
+        "responses": {}
+      },
+      "post":  {
+        "semmary": "Create new Payment",
+        "description": "Create new active payment",
+        "responses": {}
+      }
+    },
+    "/payment/{paymentId}" : {
+      "put": {},
+      "delete": {}
+    }
+  }
+```
+
+#

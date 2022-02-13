@@ -38,12 +38,28 @@
   },
   "paths": {
     "/payment" : {
-      "get": {},
-      "post":  {}
+      "get": {
+        "semmary": "Get All Payment",
+        "description": "Only will return acative payment, complete payment or delete payment will be remove",
+        "responses": {}
+      },
+      "post":  {
+        "semmary": "Create new Payment",
+        "description": "Create new active payment",
+        "responses": {}
+      }
     },
     "/payment/{paymentId}" : {
-      "put": {},
-      "delete": {}
+      "put": {
+        "semmary": "Update existing Payment",
+        "description": "Update existing payment in database",
+        "responses": {}
+      },
+      "delete": {
+        "semmary": "Delete existing Payment",
+        "description": "Delete existing payment in database",
+        "responses": {}
+      }
     }
   }
 }

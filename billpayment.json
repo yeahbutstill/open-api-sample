@@ -70,6 +70,16 @@
       "post": {
         "summary": "Create new Payment",
         "description": "Create new active payment",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+
+              }
+            }
+          }
+        },
         "responses": {}
       }
     },
@@ -90,6 +100,16 @@
             }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+
+              }
+            }
+          }
+        },
         "responses": {}
       },
       "delete": {

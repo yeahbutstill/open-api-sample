@@ -349,4 +349,35 @@ temen-temen wajib sudah memahami basic
 [doc21]: doc/Screenshot%20from%202022-02-13%2017-59-34.png "Doc21"
 
 # Request Body
-* 
+* OpenAPI juga mendukung dokumentasi untuk request body 
+* Dengan ini, kita memberi tahu tentang schema request body yang harus dikirim ketika menggunakan RESTful API kita 
+* Request body mendukung schema, sehingga kita memberi tahu bentuk schema format data, bahkan validasi yang diperlukan
+
+# Request Body Object
+![alt text][doc22]
+
+[doc22]: doc/Screenshot%20from%202022-02-13%2018-11-00.png "Doc22"
+
+# Media Type Object
+![alt text][doc23]
+
+[doc23]: doc/Screenshot%20from%202022-02-13%2018-12-50.png "Doc23"
+
+# Kode : Request Body
+```json5
+"post": {
+        "summary": "Create new Payment",
+        "description": "Create new active payment",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+
+              }
+            }
+          }
+        },
+```
+
+# Object Schema

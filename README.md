@@ -151,3 +151,12 @@ temen-temen wajib sudah memahami basic
 
 [doc9]: doc/Screenshot%20from%202022-02-13%2005-13-34.png "Doc9"
 
+# External Documentation
+* External documentation merupakan bagian dalam OpenAPI jika kita ingin menambahkan link tambahan dalam OpenAPI 
+* Bisa menuju link documentation lain, atau mungkin link menuju website
+
+# External Documentation Object
+
+![alt text][doc10]
+
+[doc10]: doc/Screenshot%20from%202022-02-13%2009-16-34.png "Doc10"

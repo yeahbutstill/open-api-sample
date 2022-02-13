@@ -32,5 +32,9 @@
       }
     }
   ],
+  "externalDocs": {
+    "description": "Github Yeah But Still",
+    "url": "https://github.com/yeahbutstill"
+  },
   "paths": {}
 }

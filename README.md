@@ -422,3 +422,65 @@ temen-temen wajib sudah memahami basic
                     }
                   }
 ```
+
+# Example
+* OpenAPI mendukung example data 
+* Example data merupakan data contoh yang bisa kita tambahkan baik itu di Parameter, Request Body dan Response Body
+
+# Kode : Example di Parameter
+```json5
+{
+            "name": "va_customer",
+            "in": "query",
+            "required": false,
+            "description": "Filter payment by VA customer",
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30
+            },
+            "examples": {
+              "fixed_virtual_account" : {
+                "description": "Nomor akun virtual yang secara unik ditentukan oleh pelanggan. Misalnya, aplikasi e-wallet yang menggunakan nomor ponsel pengguna sebagai nomor ID. Dengan jenis virtual account ini, pengguna dapat melakukan pembayaran secara berulang untuk menambah saldo e-wallet tanpa harus memasukkan nomor ID setiap kali melakukan transaksi.",
+                "value": "1087832081912"
+              },
+              "non_fixed_virtual_account" : {
+                "description": "Nomor akun virtual yang ditentukan secara acak dan biasanya hanya bisa digunakan untuk satu kali transaksi. Misalnya, ketika pelanggan ingin melakukan pembayaran melalui virtual account di sebuah e-commerce, maka nomor ID yang diperoleh pelanggan tersebut tidak akan dapat digunakan kembali untuk melakukan transaksi lainnya.",
+                "value": "123812371484182"
+              }
+```
+
+# Kode : Example di Request Body
+```json5
+"examples": {
+                "fixed_virtual_account" : {
+                  "description": "Example create payment fixed VA",
+                  "value": {
+                    "va_customer" : "1087832081912",
+                    "priority": 30,
+                    "tags": [
+                      "BCA",
+                      "BSI",
+                      "CIMB",
+                      "BTN",
+                      "BVIC"
+                    ]
+                  }
+                },
+                "non_fixed_virtual_account" : {
+                  "description": "Example create payment non fixed VA",
+                  "value": {
+                    "va_customer" : "123812371484182",
+                    "priority": 30,
+                    "tags": [
+                      "TOKOPEDIA",
+                      "BUKALAPAK",
+                      "SHOOPE",
+                      "BLIBLI",
+                      "LAZADA"
+                    ]
+                  }
+                }
+              }
+```
+

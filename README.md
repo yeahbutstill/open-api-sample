@@ -405,3 +405,20 @@ temen-temen wajib sudah memahami basic
               }
             }
 ```
+
+# Array Schema
+* Selain tipe data object, Schema juga mendukung tipe data array 
+* Saat membuat tipe data array, kita juga bisa menentukan tipe data items yang terdapat di array, bisa tipe data sederhana, bisa tipe data kompleks seperti object atau array lagi
+
+# Kode : Array Schema
+```json5
+"tags": {
+                    "type": "array",
+                    "required": false,
+                    "minItems": 1,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+```

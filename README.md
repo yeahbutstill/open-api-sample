@@ -564,3 +564,16 @@ temen-temen wajib sudah memahami basic
             }
           }
 ```
+
+# Tag
+* Tag merupakan fitur tambahan, dimana kita bisa grouping beberapa Path menjadi satu Tag yang sama 
+* Misal ketika kita membuat OpenAPI untuk RESTful API Toko Online, kita grouping dengan Tag Product, Customer, Payment, Order, dan lain-lain
+
+# Kode : Tag
+```json5
+"tags": [
+          "bill payment",
+          "va fixed",
+          "va non Fixed"
+        ],
+```

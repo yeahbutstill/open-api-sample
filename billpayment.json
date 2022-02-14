@@ -39,6 +39,11 @@
   "paths": {
     "/payment": {
       "get": {
+        "tags": [
+          "bill payment",
+          "va fixed",
+          "va non Fixed"
+        ],
         "summary": "Get All Payment",
         "description": "Only will return acative payment, complete payment or delete payment will be remove",
         "parameters": [
@@ -141,6 +146,11 @@
         }
       },
       "post": {
+        "tags": [
+          "bill payment",
+          "va fixed",
+          "va non Fixed"
+        ],
         "summary": "Create new Payment",
         "description": "Create new active payment",
         "requestBody": {
@@ -269,6 +279,11 @@
     },
     "/payment/{paymentId}": {
       "put": {
+        "tags": [
+          "bill payment",
+          "va fixed",
+          "va non Fixed"
+        ],
         "summary": "Update existing Payment",
         "description": "Update existing payment in database",
         "parameters": [
@@ -418,6 +433,11 @@
         }
       },
       "delete": {
+        "tags": [
+          "bill payment",
+          "va fixed",
+          "va non Fixed"
+        ],
         "summary": "Delete existing Payment",
         "description": "Delete existing payment in database",
         "parameters": [

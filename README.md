@@ -611,3 +611,29 @@ temen-temen wajib sudah memahami basic
 ![alt text][doc30]
 
 [doc30]: doc/Screenshot%20from%202022-02-14%2010-27-43.png "Doc30"
+
+# Security
+* OpenAPI mendukung dokumentasi untuk Security RESTful API 
+* Dengan ini kita bisa memberitahu pengguna mekanisme Security apa yang kita gunakan di RESTful API kita 
+* Ada banyak format security yang didukung oleh OpenAPI, seperti apiKey (query param, header, cookie), http (basic auth, bearer token), oauth2 dan openIdConnect 
+* Sebelum menggunakan fitur Security, kita perlu membuat requirement Security terlebih dahulu di Component, baru kita bisa gunakan di Operation
+
+# Security Object (1)
+![alt text][doc31]
+
+[doc31]: doc/Screenshot%20from%202022-02-14%2010-47-57.png "Doc31"
+
+# Security Object (2)
+![alt text][doc32]
+
+[doc32]: doc/Screenshot%20from%202022-02-14%2010-49-27.png "Doc32"
+
+# Kode : Security
+![alt text][doc33]
+
+[doc33]: doc/Screenshot%20from%202022-02-14%2010-51-18.png "Doc33"
+
+# Kode : Security di Operation
+![alt text][doc34]
+
+[doc34]: doc/Screenshot%20from%202022-02-14%2010-54-52.png "Doc34"

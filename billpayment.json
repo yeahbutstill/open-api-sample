@@ -39,6 +39,11 @@
   "paths": {
     "/payment": {
       "get": {
+        "security": [
+          {
+            "PaymentAuth": []
+          }
+        ],
         "tags": [
           "BillPayment",
           "VaFixed",
@@ -125,6 +130,11 @@
         }
       },
       "post": {
+        "security": [
+          {
+            "PaymentAuth": []
+          }
+        ],
         "tags": [
           "BillPayment",
           "VaFixed",
@@ -218,6 +228,11 @@
     },
     "/payment/{paymentId}": {
       "put": {
+        "security": [
+          {
+            "PaymentAuth": []
+          }
+        ],
         "tags": [
           "BillPayment",
           "VaFixed",
@@ -314,6 +329,11 @@
         }
       },
       "delete": {
+        "security": [
+          {
+            "PaymentAuth": []
+          }
+        ],
         "tags": [
           "BillPayment",
           "VaFixed",
@@ -378,6 +398,14 @@
     }
   },
   "components": {
+    "securitySchemes": {
+      "PaymentAuth": {
+        "description": "Authentication for BillPayment RESTful API",
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-Key"
+      }
+    },
     "parameters": {
       "paymentId": {
         "name": "paymentId",

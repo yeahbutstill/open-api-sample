@@ -597,3 +597,17 @@ temen-temen wajib sudah memahami basic
 ![alt text][doc28]
 
 [doc28]: doc/Screenshot%20from%202022-02-14%2007-38-41.png "Doc28"
+
+# Reference
+* OpenAPI memiliki fitur reference, dimana dengan reference kita bisa membuat reference ke data component yang sudah kita buat 
+* Hal ini lebih baik, daripada kita buat component yang sama berkali kali pada beberapa path, misal jika terdapat response body yang sama, lebih baik kita gunakan reference, jika memiliki parameter yang sama, lebih baik kita gunakan reference
+
+# Kode : Reference pada Parameter
+![alt text][doc29]
+
+[doc29]: doc/Screenshot%20from%202022-02-14%2010-19-09.png "Doc29"
+
+# Kode : Reference pada Response Body
+![alt text][doc30]
+
+[doc30]: doc/Screenshot%20from%202022-02-14%2010-27-43.png "Doc30"

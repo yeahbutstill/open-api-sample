@@ -40,9 +40,9 @@
     "/payment": {
       "get": {
         "tags": [
-          "bill payment",
-          "va fixed",
-          "va non Fixed"
+          "BillPayment",
+          "VaFixed",
+          "VaNonFixed"
         ],
         "summary": "Get All Payment",
         "description": "Only will return acative payment, complete payment or delete payment will be remove",
@@ -86,28 +86,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "string"
-                      },
-                      "va_customer": {
-                        "type": "string"
-                      },
-                      "priority": {
-                        "type": "number",
-                        "format": "int32"
-                      },
-                      "tags": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/ArrayBillpayment"
                 },
                 "examples": {
                   "success": {
@@ -147,9 +126,9 @@
       },
       "post": {
         "tags": [
-          "bill payment",
-          "va fixed",
-          "va non Fixed"
+          "BillPayment",
+          "VaFixed",
+          "VaNonFixed"
         ],
         "summary": "Create new Payment",
         "description": "Create new active payment",
@@ -158,29 +137,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "va_customer": {
-                    "type": "string",
-                    "minLength": 1,
-                    "required": true
-                  },
-                  "priority": {
-                    "type": "integer",
-                    "format": "int32",
-                    "required": true,
-                    "default": 1
-                  },
-                  "tags": {
-                    "type": "array",
-                    "required": false,
-                    "minItems": 1,
-                    "items": {
-                      "type": "string",
-                      "minLength": 1
-                    }
-                  }
-                }
+                "$ref": "#/components/schemas/CreateOrUpdateBillPayment"
               },
               "examples": {
                 "fixed_virtual_account": {
@@ -221,25 +178,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "va_customer": {
-                      "type": "string"
-                    },
-                    "priority": {
-                      "type": "number",
-                      "format": "int32"
-                    },
-                    "tags": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/BillPayment"
                 },
                 "examples": {
                   "fixed_virtual_account": {
@@ -280,33 +219,15 @@
     "/payment/{paymentId}": {
       "put": {
         "tags": [
-          "bill payment",
-          "va fixed",
-          "va non Fixed"
+          "BillPayment",
+          "VaFixed",
+          "VaNonFixed"
         ],
         "summary": "Update existing Payment",
         "description": "Update existing payment in database",
         "parameters": [
           {
-            "name": "paymentId",
-            "in": "path",
-            "required": true,
-            "description": "Payment id for updated",
-            "schema": {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 30
-            },
-            "examples": {
-              "fixed_virtual_account": {
-                "description": "Example payment id fixed VA",
-                "value": "VA001"
-              },
-              "non_fixed_virtual_account": {
-                "description": "Example payment id non fixed VA",
-                "value": "VA0001"
-              }
-            }
+            "$ref": "#/components/parameters/paymentId"
           }
         ],
         "requestBody": {
@@ -314,29 +235,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "va_customer": {
-                    "type": "string",
-                    "minLength": 1,
-                    "required": true
-                  },
-                  "priority": {
-                    "type": "integer",
-                    "format": "int32",
-                    "required": true,
-                    "default": 1
-                  },
-                  "tags": {
-                    "type": "array",
-                    "required": false,
-                    "minItems": 1,
-                    "items": {
-                      "type": "string",
-                      "minLength": 1
-                    }
-                  }
-                }
+                "$ref": "#/components/schemas/CreateOrUpdateBillPayment"
               },
               "examples": {
                 "fixed_virtual_account": {
@@ -377,25 +276,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "va_customer": {
-                      "type": "string"
-                    },
-                    "priority": {
-                      "type": "number",
-                      "format": "int32"
-                    },
-                    "tags": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/BillPayment"
                 },
                 "examples": {
                   "fixed_virtual_account": {
@@ -434,23 +315,15 @@
       },
       "delete": {
         "tags": [
-          "bill payment",
-          "va fixed",
-          "va non Fixed"
+          "BillPayment",
+          "VaFixed",
+          "VaNonFixed"
         ],
         "summary": "Delete existing Payment",
         "description": "Delete existing payment in database",
         "parameters": [
           {
-            "name": "paymentId",
-            "in": "path",
-            "required": true,
-            "description": "Payment id for deleted",
-            "schema": {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 30
-            }
+            "$ref": "#/components/parameters/paymentId"
           }
         ],
         "responses": {
@@ -571,24 +444,7 @@
       "ArrayBillpayment": {
         "type": "array",
         "items": {
-          "properties": {
-            "id": {
-              "type": "string"
-            },
-            "va_customer": {
-              "type": "string"
-            },
-            "priority": {
-              "type": "number",
-              "format": "int32"
-            },
-            "tags": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          }
+          "$ref": "#/components/schemas/BillPayment"
         }
       }
     }

@@ -577,3 +577,23 @@ temen-temen wajib sudah memahami basic
           "va non Fixed"
         ],
 ```
+
+# Component
+* Component merupakan bagian dalam OpenAPI untuk menyimpan object yang bisa digunakan ulang 
+* Misal, saat nanti kita membuat spek untuk Request Body atau Response Body, dibanding kita buat satu persatu, jika ada beberapa yang sama, lebih baik kita buat dalam Component, sehingga bisa digunakan di beberapa Endpoint API 
+* Ada banyak jenis component, ada schema, request, response, parameter, header, dan lain-lain
+
+# Component Object (1)
+![alt text][doc26]
+
+[doc26]: doc/Screenshot%20from%202022-02-14%2007-34-35.png "Doc26"
+
+# Component Object (2)
+![alt text][doc27]
+
+[doc27]: doc/Screenshot%20from%202022-02-14%2007-36-39.png "Doc27"
+
+# Kedo : Component
+![alt text][doc28]
+
+[doc28]: doc/Screenshot%20from%202022-02-14%2007-38-41.png "Doc28"

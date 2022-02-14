@@ -503,5 +503,94 @@
         }
       }
     }
+  },
+  "components": {
+    "parameters": {
+      "paymentId": {
+        "name": "paymentId",
+        "in": "path",
+        "required": true,
+        "description": "Payment id for updated",
+        "schema": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        },
+        "examples": {
+          "fixed_virtual_account": {
+            "description": "Example payment id fixed VA",
+            "value": "VA001"
+          },
+          "non_fixed_virtual_account": {
+            "description": "Example payment id non fixed VA",
+            "value": "VA0001"
+          }
+        }
+      }
+    },
+    "schemas": {
+      "BillPayment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "va_customer": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "number",
+            "format": "int32"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CreateOrUpdateBillPayment": {
+        "type": "object",
+        "properties": {
+          "va_customer": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "number",
+            "format": "int32"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ArrayBillpayment": {
+        "type": "array",
+        "items": {
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "va_customer": {
+              "type": "string"
+            },
+            "priority": {
+              "type": "number",
+              "format": "int32"
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

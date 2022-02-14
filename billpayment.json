@@ -64,18 +64,81 @@
               "maxLength": 30
             },
             "examples": {
-              "fixed_virtual_account" : {
+              "fixed_virtual_account": {
                 "description": "Nomor akun virtual yang secara unik ditentukan oleh pelanggan. Misalnya, aplikasi e-wallet yang menggunakan nomor ponsel pengguna sebagai nomor ID. Dengan jenis virtual account ini, pengguna dapat melakukan pembayaran secara berulang untuk menambah saldo e-wallet tanpa harus memasukkan nomor ID setiap kali melakukan transaksi.",
                 "value": "1087832081912"
               },
-              "non_fixed_virtual_account" : {
+              "non_fixed_virtual_account": {
                 "description": "Nomor akun virtual yang ditentukan secara acak dan biasanya hanya bisa digunakan untuk satu kali transaksi. Misalnya, ketika pelanggan ingin melakukan pembayaran melalui virtual account di sebuah e-commerce, maka nomor ID yang diperoleh pelanggan tersebut tidak akan dapat digunakan kembali untuk melakukan transaksi lainnya.",
                 "value": "123812371484182"
               }
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success get all payment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "va_customer": {
+                        "type": "string"
+                      },
+                      "priority": {
+                        "type": "number",
+                        "format": "int32"
+                      },
+                      "tags": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "success": {
+                    "description": "Example success get all payment",
+                    "value": [
+                      {
+                        "id": "1",
+                        "va_customer": "fixed_virtual_account",
+                        "priority": 30,
+                        "tags": [
+                          "BCA",
+                          "BSI",
+                          "CIMB",
+                          "BTN",
+                          "BVIC"
+                        ]
+                      },
+                      {
+                        "id": "2",
+                        "va_customer": "non_fixed_virtual_account",
+                        "priority": 30,
+                        "tags": [
+                          "TOKOPEDIA",
+                          "BUKALAPAK",
+                          "SHOOPE",
+                          "BLIBLI",
+                          "LAZADA"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
       },
       "post": {
         "summary": "Create new Payment",
@@ -87,7 +150,7 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "va_customer" : {
+                  "va_customer": {
                     "type": "string",
                     "minLength": 1,
                     "required": true
@@ -110,10 +173,10 @@
                 }
               },
               "examples": {
-                "fixed_virtual_account" : {
+                "fixed_virtual_account": {
                   "description": "Example create payment fixed VA",
                   "value": {
-                    "va_customer" : "1087832081912",
+                    "va_customer": "1087832081912",
                     "priority": 30,
                     "tags": [
                       "BCA",
@@ -124,10 +187,10 @@
                     ]
                   }
                 },
-                "non_fixed_virtual_account" : {
+                "non_fixed_virtual_account": {
                   "description": "Example create payment non fixed VA",
                   "value": {
-                    "va_customer" : "123812371484182",
+                    "va_customer": "123812371484182",
                     "priority": 30,
                     "tags": [
                       "TOKOPEDIA",
@@ -142,7 +205,66 @@
             }
           }
         },
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success create payment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "va_customer": {
+                      "type": "string"
+                    },
+                    "priority": {
+                      "type": "number",
+                      "format": "int32"
+                    },
+                    "tags": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "fixed_virtual_account": {
+                    "description": "Success create payment fixed VA",
+                    "value": {
+                      "va_customer": "1087832081912",
+                      "priority": 30,
+                      "tags": [
+                        "BCA",
+                        "BSI",
+                        "CIMB",
+                        "BTN",
+                        "BVIC"
+                      ]
+                    }
+                  },
+                  "non_fixed_virtual_account": {
+                    "description": "Success create payment non fixed VA",
+                    "value": {
+                      "va_customer": "123812371484182",
+                      "priority": 30,
+                      "tags": [
+                        "TOKOPEDIA",
+                        "BUKALAPAK",
+                        "SHOOPE",
+                        "BLIBLI",
+                        "LAZADA"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/payment/{paymentId}": {
@@ -161,11 +283,11 @@
               "maxLength": 30
             },
             "examples": {
-              "fixed_virtual_account" : {
+              "fixed_virtual_account": {
                 "description": "Example payment id fixed VA",
                 "value": "VA001"
               },
-              "non_fixed_virtual_account" : {
+              "non_fixed_virtual_account": {
                 "description": "Example payment id non fixed VA",
                 "value": "VA0001"
               }
@@ -179,7 +301,7 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "va_customer" : {
+                  "va_customer": {
                     "type": "string",
                     "minLength": 1,
                     "required": true
@@ -202,10 +324,10 @@
                 }
               },
               "examples": {
-                "fixed_virtual_account" : {
-                  "description": "Example create payment fixed VA",
+                "fixed_virtual_account": {
+                  "description": "Example update payment fixed VA",
                   "value": {
-                    "va_customer" : "1087832081912",
+                    "va_customer": "1087832081912",
                     "priority": 30,
                     "tags": [
                       "BCA",
@@ -216,10 +338,10 @@
                     ]
                   }
                 },
-                "non_fixed_virtual_account" : {
-                  "description": "Example create payment non fixed VA",
+                "non_fixed_virtual_account": {
+                  "description": "Example update payment non fixed VA",
                   "value": {
-                    "va_customer" : "123812371484182",
+                    "va_customer": "123812371484182",
                     "priority": 30,
                     "tags": [
                       "TOKOPEDIA",
@@ -234,7 +356,66 @@
             }
           }
         },
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success update payment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "va_customer": {
+                      "type": "string"
+                    },
+                    "priority": {
+                      "type": "number",
+                      "format": "int32"
+                    },
+                    "tags": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "fixed_virtual_account": {
+                    "description": "Success update payment fixed VA",
+                    "value": {
+                      "va_customer": "1087832081912",
+                      "priority": 30,
+                      "tags": [
+                        "BCA",
+                        "BSI",
+                        "CIMB",
+                        "BTN",
+                        "BVIC"
+                      ]
+                    }
+                  },
+                  "non_fixed_virtual_account": {
+                    "description": "Success update payment non fixed VA",
+                    "value": {
+                      "va_customer": "123812371484182",
+                      "priority": 30,
+                      "tags": [
+                        "TOKOPEDIA",
+                        "BUKALAPAK",
+                        "SHOOPE",
+                        "BLIBLI",
+                        "LAZADA"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       },
       "delete": {
         "summary": "Delete existing Payment",
@@ -252,7 +433,54 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Succes delete payment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "examples": {
+                  "success": {
+                    "description": "Success delete payment",
+                    "value": {
+                      "success": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed delete not found payment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "failed": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "examples": {
+                  "failed": {
+                    "description": "Failed delete payment",
+                    "value": {
+                      "failed": false
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

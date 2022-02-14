@@ -484,3 +484,83 @@ temen-temen wajib sudah memahami basic
               }
 ```
 
+# Response Body
+* Selain Request Body, kita juga mendokumentasikan Response Body di OpenAPI 
+* Dengan demikian, kita bisa memberi tahu format Response Body yang kita kembalikan pada RESTful API yang kita buat 
+* Yang menarik di OpenAPI, kita bisa memberi tahu format response body sesuai dengan response status nya, misal kita bisa tentukan untuk response status 200, 400, 500, dan lain-lain
+
+# Response Body Object
+![alt text][doc24]
+
+[doc24]: doc/Screenshot%20from%202022-02-14%2006-26-55.png "Doc24"
+
+# Response Object
+![alt text][doc25]
+
+[doc25]: doc/Screenshot%20from%202022-02-14%2006-30-09.png "Doc25"
+
+# Kode : Response Body
+```json5
+"200": {
+            "description": "Success get all payment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "va_customer": {
+                        "type": "string"
+                      },
+                      "priority": {
+                        "type": "number",
+                        "format": "int32"
+                      },
+                      "tags": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "success": {
+                    "description": "Example success get all payment",
+                    "value": [
+                      {
+                        "id": "1",
+                        "va_customer": "fixed_virtual_account",
+                        "priority": 30,
+                        "tags": [
+                          "BCA",
+                          "BSI",
+                          "CIMB",
+                          "BTN",
+                          "BVIC"
+                        ]
+                      },
+                      {
+                        "id": "2",
+                        "va_customer": "non_fixed_virtual_account",
+                        "priority": 30,
+                        "tags": [
+                          "TOKOPEDIA",
+                          "BUKALAPAK",
+                          "SHOOPE",
+                          "BLIBLI",
+                          "LAZADA"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+```

@@ -637,3 +637,20 @@ temen-temen wajib sudah memahami basic
 ![alt text][doc34]
 
 [doc34]: doc/Screenshot%20from%202022-02-14%2010-54-52.png "Doc34"
+
+# Code Generator
+* OpenAPI adalah spesifikasi yang standard, dan banyak diadopsi oleh banyak perusahaan 
+* Bahkan kita bisa melakukan code generator sesuai dengan bahasa pemrograman yang kita inginkan 
+* Contohnya kita bisa menggunakan https://editor.swagger.io/ untuk membuat code client atau server sesuai dengan OpenAPI file yang kita buat 
+* Hal ini bisa mempermudah ketika kita butuh membuat kode client atau server yang sesuai dengan OpenAPI spec yang sudah dibuat
+
+# Swagger Code Generator
+![alt text][doc35]
+
+[doc35]: doc/Screenshot%20from%202022-02-14%2012-09-06.png "Doc35"
+
+# Penutup
+* Masih banyak fitur yang terdapat di OpenAPI, silahkan pelajari langsung di halaman websitenya 
+* Mulai sekarang selalu gunakan OpenAPI untuk membuat dokumentasi RESTful API 
+* Buatlah OpenAPI sebelum kita membuat aplikasi RESTful API 
+* OpenAPI bisa digunakan sebagai kontrak kesepakatan antara yang akan membuat RESTful API dan yang akan menggunakan RESTful API
